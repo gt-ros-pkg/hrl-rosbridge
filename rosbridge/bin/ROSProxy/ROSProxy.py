@@ -3,7 +3,7 @@
 import roslib; roslib.load_manifest('rospy')
 import rospy
 roslib.load_manifest('rosservice')
-import roslib.rostime
+import rospy.rostime
 import rosservice
 import re 
 
@@ -131,9 +131,9 @@ class ROSProxy(object):
 		elif typeStr == 'time' or typeStr == 'duration':
 			inst = None
 			if typeStr == 'time':
-				inst = roslib.rostime.Time()
+				inst = rospy.rostime.Time()
 			else:
-				inst = roslib.rostime.Duration()
+				inst = rospy.rostime.Duration()
 			inst.nsecs = obj['nsecs']
 			inst.secs = obj['secs']
 			return inst
